@@ -60,11 +60,59 @@ where employee_id is an employee's ID number, name is their name, months is the 
   
 	SELECT * FROM (SELECT  months*salary, COUNT(*) FROM employee GROUP BY months*salary ORDER BY months*salary DESC) WHERE ROWNUM = 1;
   
+  # Weather Observation Station 2  
   
+Query the following two values from the STATION table:  
+The sum of all values in LAT_N rounded to a scale of 2 decimal places.  
+The sum of all values in LONG_W rounded to a scale of 2 decimal places.  
+  
+***Input Format***  
+The STATION table is described as follows:  
+  
+![img](https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg)  
+  
+where LAT_N is the northern latitude and LONG_W is the western longitude.  
+  
+	SELECT (ROUND(SUM(lat_n), 2) || ' ' || ROUND(SUM(long_w), 2)) FROM station;
+  
+  
+  
+# Weather Observation Station 13  
+  
+Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than 38.7880 and less than 137.2345. Truncate your answer to 4 decimal places.  
+  
+	SELECT ROUND(SUM(lat_n), 4) FROM station WHERE lat_n > 38.7880 AND lat_n < 137.2345;
+  
+  
+  
+# Weather Observation Station 14  
+  
+Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to 4 decimal places.
+  
+	SELECT ROUND(MAX(lat_n), 4) FROM station WHERE lat_n < 137.2345;
+  
+  
+  
+# Weather Observation Station 15  
+  
+Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to 4 decimal places.  
+  
+	SELECT ROUND(long_w, 4) FROM station WHERE lat_n = (SELECT MAX(lat_n) FROM station WHERE lat_n < 137.2345);
+  
+  
+  
+# Weather Observation Station 16  
+  
+Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780. Round your answer to 4 decimal places.  
+  
+	SELECT ROUND(MIN(lat_n), 4) FROM station WHERE lat_n > 38.7780;
+  
+  
+# Weather Observation Station 17
 
+Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to  4 decimal places.
 
-
-
+	select round(long_w,4) from station where lat_n = (select min(lat_n) from station where lat_n > 38.7780);
 
 
 # Weather Observation Station 18  
@@ -89,7 +137,7 @@ Query the [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance)
 
   	select round (sqrt (power(max(lat_n) - min(lat_n),2)+ power(max(long_w) - min(long_w),2)),4) from station;
 
-# Weather Observation Station 19  
+# Weather Observation Station 20 
 
 A median is defined as a number separating the higher half of a data set from the lower half. Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to 4  decimal places.
 
