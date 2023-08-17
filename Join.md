@@ -238,3 +238,16 @@ Submissions: The submission_id is the id of the submission, hacker_id is the id 
 		group by h.hacker_id, name
 		having total_score > 0
 		order by total_score desc, h.hacker_id;
+
+
+# Prime number
+
+Write a query to print all prime numbers less than or equal to 1000 . Print your result on a single line, and use the ampersand () character as your separator (instead of a space).
+
+		With recursive t as (select 2 as number 
+                      union 
+                      select number + 1  from t 
+                      where number < 1000)
+          
+	select GROUP_CONCAT(number SEPARATOR '&') from t
+	where (select count(*) from t t2 where t.number%t2.number=0) = 1;
