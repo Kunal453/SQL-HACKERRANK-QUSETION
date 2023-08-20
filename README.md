@@ -1,5 +1,6 @@
-# This all questions answer of SQL query its solviin hackerrrank.
-
+# This all questions answer of SQL query its solve in hackerrrank platform.
+## The question based on Join, Aggregation, Basic Syntax of DDL, DML, DCL, TCL.
+### In this basic to advanced question are solved.
 
 
 # Revising the Select Query I  
