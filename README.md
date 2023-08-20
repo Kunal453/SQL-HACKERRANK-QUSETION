@@ -1,3 +1,7 @@
+# This all questions answer of SQL query its solviin hackerrrank.
+
+
+
 # Revising the Select Query I  
   
 Query all columns for all American cities in CITY with populations larger than 100000. The CountryCode for America is USA.  
