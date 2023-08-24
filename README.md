@@ -138,7 +138,7 @@ Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, a
 
 Also use this option using Regular Expression
 								
-	SELECT DISTINCT city FROM station WHERE city REGEXP '^[AEIOUaeiou].*[AEIOUaeiou]$';
+			SELECT DISTINCT city FROM station WHERE city REGEXP '^[AEIOUaeiou].*[AEIOUaeiou]$';
 
 
 # Weather Observation Station 9  
